@@ -1,0 +1,39 @@
+.editor .stopover-label {
+    -fx-font-weight: bold;
+}
+
+.editor .text-field {
+    -fx-padding: 0 0 10px 0;
+    -fx-border-insets: 0 0 15px 0;
+    -fx-background-insets: 0 0 10px 0;
+}
+
+.editor .text-field:focused {
+    -fx-border-color: -fx-color-white -fx-color-white -fx-color-blue -fx-color-white;
+}
+
+.editor .label {
+    -fx-text-fill: -fx-color-blue;
+}
+
+.editor .button {
+    -fx-text-fill: -fx-color-blue;
+    -fx-border-color: -fx-color-blue;
+    -fx-background-color: transparent;
+    -fx-padding: 10px;
+    -fx-border-insets: 15px;
+    -fx-background-insets: 10px;
+}
+.editor .button:armed {
+    -fx-text-fill: -fx-color-grey-normal;
+}
+
+.table-view > .column-header-background, .table-view .filler {
+    -fx-background-image: none;
+    -fx-background-color: #fff;
+}
+
+.table-view > .column-header-background > .filler,
+.table-view > .column-header-background > .nested-column-header > .column-header.table-column{
+    -fx-background-color: -fx-color-white;
+}

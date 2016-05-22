@@ -1,0 +1,16 @@
+.table-view > .column-header-background, .table-view .filler {
+    -fx-background-image: none;
+    -fx-background-color: -fx-color-scoreboard-greyscale;
+}
+
+.table-view > .column-header-background > .filler,
+.table-view > .column-header-background > .nested-column-header > .column-header.table-column{
+    -fx-background-color: -fx-color-scoreboard-greyscale;
+    -fx-border-color: -fx-color-scoreboard-greyscale;
+}
+.label, .cell {
+    -fx-text-fill: -fx-color-grey-light;
+    -fx-border: none;
+    -fx-border-width: 0 0 0 0;
+    -fx-background-color: -fx-color-scoreboard-greyscale;
+}

@@ -1,0 +1,40 @@
+* {
+    -fx-font-family: Roboto;
+    -fx-font-size: 16px;
+    -fx-color-white: #fff;
+    -fx-color-blue: #2979ff;
+    -fx-color-grey-light: #eee;
+    -fx-color-grey-normal: #aaa;
+    -fx-color-scoreboard-greyscale: #1d1c16;
+}
+
+.text-field {
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: transparent transparent -fx-color-grey-normal transparent;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-insets: 0;
+    -fx-background-insets: 0;
+}
+
+.split-pane-divider {
+   -fx-border-color:  transparent;
+   -fx-background-color: transparent;
+   -fx-background-insets: 0;
+}
+
+.bold {
+    -fx-font-weight: bold;
+}
+
+.white-background {
+    -fx-background-color: -fx-color-white;
+}
+
+.bordered-pane {
+    -fx-border-width: 1;
+    -fx-border-color: -fx-color-grey-normal;
+    -fx-padding: 10px;
+    -fx-border-insets: 15px;
+    -fx-background-insets: 10px;
+}

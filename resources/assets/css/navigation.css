@@ -1,0 +1,38 @@
+.navigation {
+    -fx-background-color: -fx-color-blue;
+}
+
+.navigation .text-field {
+    -fx-text-fill: -fx-color-white;
+    -fx-border-color: transparent transparent -fx-color-white transparent;
+}
+
+.glyph-icon {
+    -fx-fill: -fx-color-grey-light;
+    -fx-opacity: .8;
+}
+
+.glyph-icon:hover, .glyph-icon:focused {
+    -fx-opacity: 1.0;
+}
+
+.glyph-icon:pressed, .glyph-icon:armed {
+    -fx-fill: -fx-color-white;
+    -fx-opcaity: 1.0;
+}
+
+.button-icon, .button-icon:focused, .button-icon:hover, .button-icon:pressed, .button-icon:armed {
+    -fx-font-size: 24px;
+    -fx-border: none;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-color-white;
+}
+
+.button-icon.button-disabled .glyph-icon,
+.button-icon.button-disabled .glyph-icon:hover,
+.button-icon.button-disabled .glyph-icon:focused,
+.button-icon.button-disabled .glyph-icon:pressed,
+.button-icon.button-disabled .glyph-icon:armed {
+    -fx-opacity: .3;
+    -fx-fill: -fx-color-white;
+}
