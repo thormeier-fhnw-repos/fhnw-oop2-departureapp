@@ -72,7 +72,6 @@ public class MainScoreBoardUI extends BorderPane
     public void depart()
     {
         if (isDeparting) {
-            System.out.println("departe!");
             scoreBoardTable.getItems().get(0).resetLed();
 
             rides.remove(0);
