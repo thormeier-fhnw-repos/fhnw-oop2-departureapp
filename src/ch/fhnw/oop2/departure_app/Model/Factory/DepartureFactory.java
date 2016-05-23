@@ -42,5 +42,4 @@ class DepartureFactory
             LocalTime.of(0, 0)
         );
     }
-
 }

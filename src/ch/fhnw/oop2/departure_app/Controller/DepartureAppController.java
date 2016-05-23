@@ -33,7 +33,15 @@ public class DepartureAppController extends Application
      * The currently active train ride
      */
     private TrainRide currentRide = null;
+
+    /**
+     * List of rides
+     */
     private ObservableList<TrainRide> rides;
+
+    /**
+     * Score board
+     */
     private ScoreBoardController scoreBoardController = new ScoreBoardController();
 
     /**
@@ -128,7 +136,7 @@ public class DepartureAppController extends Application
             ui.toggleRedo(editQueue.redoPossible());
         });
         ui.on(IEventListener.EVENT_DELETE, (payload, context) -> {
-            editQueue.addChange(new Delete<TrainRide>(rides, currentRide));
+            editQueue.addChange(new Delete<>(rides, currentRide));
             rides.remove(currentRide);
 
             ui.toggleUndo(editQueue.undoPossible());

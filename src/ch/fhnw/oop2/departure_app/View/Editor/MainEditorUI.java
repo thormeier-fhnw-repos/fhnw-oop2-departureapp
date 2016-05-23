@@ -3,8 +3,8 @@ package ch.fhnw.oop2.departure_app.View.Editor;
 import ch.fhnw.oop2.departure_app.Model.Entity.TrainRide;
 import ch.fhnw.oop2.departure_app.Service.Event.EventExecutionContext;
 import ch.fhnw.oop2.departure_app.Service.Event.IEventListener;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.BorderPane;
 import java.util.HashMap;
@@ -20,9 +20,9 @@ public class MainEditorUI extends BorderPane implements IEventListener
     private HashMap<String, EventExecutionContext> events = new HashMap<>();
 
     /**
-     * Array list of TrainRides from the model
+     * Array list of TrainRides from the model, filtered by predicate
      */
-    private ObservableList<TrainRide> rides;
+    private FilteredList<TrainRide> filteredRides;
 
     /**
      * Top navigation
@@ -49,7 +49,7 @@ public class MainEditorUI extends BorderPane implements IEventListener
      */
     public MainEditorUI(ObservableList<TrainRide> rides)
     {
-        this.rides = rides;
+        this.filteredRides = rides.filtered((o) -> true);
         initializeControls();
         layoutControls();
     }
@@ -61,7 +61,7 @@ public class MainEditorUI extends BorderPane implements IEventListener
     {
         navigation = new Navigation();
         editor = new Editor();
-        ridesList = new TrainRideTableView(rides, editor);
+        ridesList = new TrainRideTableView(filteredRides, editor);
         mainPane = new SplitPane();
         mainPane.getStyleClass().addAll("white-background");
     }
@@ -112,15 +112,7 @@ public class MainEditorUI extends BorderPane implements IEventListener
      */
     public void search(String searchString)
     {
-        ObservableList<TrainRide> subentries = FXCollections.observableArrayList();
-
-        rides.forEach(o -> {
-            if (o.matches(searchString)) {
-                subentries.add(o);
-            }
-        });
-
-        ridesList.setItems(subentries);
+        filteredRides.setPredicate(trainRide -> trainRide.matches(searchString));
     }
 
     @Override

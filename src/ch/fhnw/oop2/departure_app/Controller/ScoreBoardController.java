@@ -126,6 +126,7 @@ class ScoreBoardController implements IEventListener
 
         return scene;
     }
+
     /**
      * Createa a Stage
      * @return A Stage object
